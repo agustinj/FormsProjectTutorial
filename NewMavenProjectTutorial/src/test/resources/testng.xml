@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New Maven Project Tutorial Test Suite">
+
+  <!--
+  <listeners>
+    <listener class-name="com.crm.qa.extentreportlistener.ExtentReportListener" />
+  </listeners>
+-->
+
+  <test name="End To End Test Cases">
+    <classes>
+      <class name="uiTests.EndToEndTestCases"></class>
+
+    </classes>
+  </test>
+</suite>
