@@ -14,8 +14,8 @@ public class HomePageObjects {
    // @FindBy (xpath= "(//*[name()='svg'][@stroke='currentColor'])[2]")
    // WebElement link_forms;
 
-    @FindBy (xpath= "(//*[name()='svg'][@stroke='currentColor'])[3]")
-    WebElement link_alerts;
+   // @FindBy (xpath= "(//*[name()='svg'][@stroke='currentColor'])[3]")
+    //WebElement link_alerts;
 
     @FindBy (xpath= "(//*[name()='svg'][@stroke='currentColor'])[4]")
     WebElement link_widgets;
