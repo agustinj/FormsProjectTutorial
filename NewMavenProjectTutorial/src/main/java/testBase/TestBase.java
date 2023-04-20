@@ -5,13 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pageObject.EnterPracticeFormDataObjects;
+import pageObject.HomePageObjects;
 import reusableComponents.PropertiesOperations;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase extends ObjectsRepo {
 
     public static WebDriver driver;
 
@@ -45,11 +46,13 @@ public class TestBase {
     @BeforeMethod  //will be run before each method in each @Test within this class
     public void setupMethod() throws Exception {
         launchBrowserAndNavigate();
+        homepage = new HomePageObjects();
+        practiceform = new EnterPracticeFormDataObjects();
     }
 
-    @AfterMethod
+ /*   @AfterMethod
     public void cleanUp() {
         driver.quit();
-    }
+    }  */
 
 }

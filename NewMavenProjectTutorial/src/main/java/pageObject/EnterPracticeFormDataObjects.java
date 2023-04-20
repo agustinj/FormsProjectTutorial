@@ -2,19 +2,22 @@ package pageObject;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+import static testBase.TestBase.driver;
+
 public class EnterPracticeFormDataObjects {
 
-   // @FindBy (xpath = "(//span[normalize-space()="Practice Form'])[1]")
+    @FindBy (xpath = "//span[normalize-space()='Practice Form']")
     WebElement  practice_form;
 
     @FindBy( id = "firstName")
-    WebElement  txt_firstname;
+    public WebElement  txt_firstname;
 
     @FindBy ( id = "lastName")
-    WebElement txt_lastname;
+    public WebElement txt_lastname;
 
     @FindBy (id = "userEmail")
     WebElement txt_emailfield;
@@ -40,6 +43,19 @@ public class EnterPracticeFormDataObjects {
 
     //constructor that initializes all page objects
     public EnterPracticeFormDataObjects() {
- //       PageFactory.initElements(driver, this);
+        PageFactory.initElements(driver, this);
     }
+
+    public void clickOnPracticeFormsLink() {
+        practice_form.click();
+    }
+
+    public void enterFirstName(String firstname) {
+        txt_firstname.sendKeys(firstname);
+    }
+
+    public void enterLastName(String lastname) {
+        txt_lastname.sendKeys(lastname);
+    }
+
 }
