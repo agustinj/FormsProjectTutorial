@@ -1,7 +1,6 @@
 package testBase;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -13,8 +12,6 @@ import reusableComponents.PropertiesOperations;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase extends ObjectsRepo {
-
-    public static WebDriver driver;
 
     public void launchBrowserAndNavigate() throws Exception {
         //read prop files, get browser and url

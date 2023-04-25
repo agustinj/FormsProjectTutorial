@@ -2,11 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="New Maven Project Tutorial Test Suite">
 
-  <!--
   <listeners>
-    <listener class-name="com.crm.qa.extentreportlistener.ExtentReportListener" />
+    <listener class-name="reusableComponents.ListenersImplementation" />
   </listeners>
--->
 
   <test name="End To End Test Cases">
     <classes>

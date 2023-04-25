@@ -1,5 +1,6 @@
 package uiTests;
 
+import com.aventstack.extentreports.Status;
 import org.testng.annotations.Test;
 import testBase.TestBase;
 
@@ -13,6 +14,7 @@ public class EndToEndTestCases extends TestBase {
         practiceform.clickOnPracticeFormsLink();
         //Enter details in fields First and Last Name
         practiceform.enterFirstName("Agustin");
+        test.log(Status.PASS, "Name input: Agustin");
         practiceform.enterLastName("Jauregui");
     }
 

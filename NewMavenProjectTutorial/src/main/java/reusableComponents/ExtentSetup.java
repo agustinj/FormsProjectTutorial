@@ -17,14 +17,14 @@ public class ExtentSetup extends ObjectsRepo {
         String reportPath = System.getProperty("user.dir")+"/Reports/target/ExecutionReport_" +
                 actualDate + ".html";
 
-        ExtentSparkReporter sparkReport = new ExtentSparkReporter("location of report");
+        ExtentSparkReporter spark = new ExtentSparkReporter(reportPath);
 
         extent = new ExtentReports();
-        extent.attachReporter(sparkReport);
+        extent.attachReporter(spark);
 
-        sparkReport.config().setDocumentTitle("DocumentTitle");
-        sparkReport.config().setTheme(Theme.DARK);
-        sparkReport.config().setReportName("ReportName");
+        spark.config().setDocumentTitle("DocumentTitle");
+        spark.config().setTheme(Theme.DARK);
+        spark.config().setReportName("ReportName");
 
         return extent;
     }
