@@ -3,12 +3,11 @@ package pageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import testBase.TestBase;
 
 import java.util.List;
 
-import static testBase.TestBase.driver;
-
-public class EnterPracticeFormDataObjects {
+public class EnterPracticeFormDataObjects extends TestBase {
 
     @FindBy (xpath = "//span[normalize-space()='Practice Form']")
     WebElement  practice_form;
@@ -56,6 +55,10 @@ public class EnterPracticeFormDataObjects {
 
     public void enterLastName(String lastname) {
         txt_lastname.sendKeys(lastname);
+    }
+
+    public List<String> getDropdownValues_State() {
+        return cm.getDropDownOptionsAsList(dd_selectstate);
     }
 
 }
