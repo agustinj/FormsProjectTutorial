@@ -28,6 +28,20 @@ public class CommonMethods {
         }
     }
 
+    //Common method to select Checkboxes
+    public void selectCheckBoxes(List<WebElement> element, String checks) {
+        String[] checksArray = checks.split(",");
+        for (String str : checksArray) {
+            for (WebElement ele : element) {
+                if(ele.getText().equalsIgnoreCase(str)) {
+                    ele.click();
+                    break;
+                }
+            }
+        }
+
+    }
+
     public List<String> getDropDownOptionsAsList(WebElement element) {
         Select os = new Select(element);
         List<WebElement> list_webElements_state = os.getOptions();

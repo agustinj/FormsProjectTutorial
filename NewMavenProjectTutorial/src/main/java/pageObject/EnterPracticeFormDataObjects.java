@@ -72,6 +72,7 @@ public class EnterPracticeFormDataObjects extends TestBase {
         txt_firstname.sendKeys("Agustin");
         txt_lastname.sendKeys("Jauregui");
         txt_emailfield.sendKeys("mariano@hotmail.com");
+        cm.selectCheckBoxes(cbox_hobbies, "Sports,music");
         txt_mobilenumber.sendKeys("0123456789");
         date_dateofbirth.sendKeys("01/10/2010");
         txt_currentaddress.sendKeys("Amsterdam, The Netherlands");
