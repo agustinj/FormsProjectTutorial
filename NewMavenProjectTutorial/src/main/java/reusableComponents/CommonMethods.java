@@ -18,6 +18,16 @@ public class CommonMethods {
         }
     }
 
+    //Common method to select Radio buttons
+    public void selectCommonRadioButton(List<WebElement> element, String valueToBeSelected) {
+        for (WebElement ref : element) {
+            if (ref.getText().equalsIgnoreCase(valueToBeSelected)) {
+                ref.click();
+                break;
+            }
+        }
+    }
+
     public List<String> getDropDownOptionsAsList(WebElement element) {
         Select os = new Select(element);
         List<WebElement> list_webElements_state = os.getOptions();

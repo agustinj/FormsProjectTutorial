@@ -75,6 +75,7 @@ public class EnterPracticeFormDataObjects extends TestBase {
         txt_mobilenumber.sendKeys("0123456789");
         date_dateofbirth.sendKeys("01/10/2010");
         txt_currentaddress.sendKeys("Amsterdam, The Netherlands");
+        cm.selectCommonRadioButton(rdo_gender, "female");
     }
 
     public void pressEnterKey() {
