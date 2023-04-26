@@ -8,6 +8,16 @@ import java.util.List;
 
 public class CommonMethods {
 
+    //common method to select dropdown value
+    public void selectCommonDropdownOption(WebElement element, String valueToBeSelected) throws Exception {
+        Select os = new Select(element);
+        try {
+            os.selectByVisibleText(valueToBeSelected);
+        } catch (Exception e) {
+            throw new Exception ("Value is not present in dropdown for WebElement: " + element + " Value to be selected is: " + valueToBeSelected);
+        }
+    }
+
     public List<String> getDropDownOptionsAsList(WebElement element) {
         Select os = new Select(element);
         List<WebElement> list_webElements_state = os.getOptions();

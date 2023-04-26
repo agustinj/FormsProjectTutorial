@@ -1,5 +1,6 @@
 package pageObject;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -36,8 +37,11 @@ public class EnterPracticeFormDataObjects extends TestBase {
     @FindBy (id = "currentAddress")
     WebElement txt_currentaddress;
 
-    @FindBy(className = "css-19bqh2r")
+    @FindBy(xpath = "//div[@class=' css-yk16xz-control']//div[@class=' css-tlfecz-indicatorContainer']//*[name()='svg']")
     WebElement dd_selectstate;
+
+    @FindBy(xpath = "//div[@id='stateCity-wrapper']//div[3]")
+    WebElement dd_selectcity;
 
 
     //constructor that initializes all page objects
@@ -59,6 +63,22 @@ public class EnterPracticeFormDataObjects extends TestBase {
 
     public List<String> getDropdownValues_State() {
         return cm.getDropDownOptionsAsList(dd_selectstate);
+    }
+
+    //Enter form data
+    public void enterUserData() throws Exception {
+        cm.selectCommonDropdownOption(dd_selectstate, "NCR");
+        cm.selectCommonDropdownOption(dd_selectcity, "Haryana");
+        txt_firstname.sendKeys("Agustin");
+        txt_lastname.sendKeys("Jauregui");
+        txt_emailfield.sendKeys("mariano@hotmail.com");
+        txt_mobilenumber.sendKeys("0123456789");
+        date_dateofbirth.sendKeys("01/10/2010");
+        txt_currentaddress.sendKeys("Amsterdam, The Netherlands");
+    }
+
+    public void pressEnterKey() {
+        WebElement.sendKeys(Keys.ENTER);
     }
 
 }
