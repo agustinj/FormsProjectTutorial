@@ -1,16 +1,11 @@
 package uiTests;
 
-import com.aventstack.extentreports.Status;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import testBase.TestBase;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class EndToEndTestCases extends TestBase {
     //OpenForms
-    @Test (enabled = false)
+ /*   @Test (enabled = false)
     public void testForms() throws Exception {
         //Enter Forms
         homepage.clickOnFormsLink();
@@ -38,9 +33,16 @@ public class EndToEndTestCases extends TestBase {
         Assert.assertEquals(actualValues, expectedValues, "Error in State Dropdown options");
     }
 
- /*   @Test
+    @Test
     public void testAnotherForm() throws Exception {
         System.out.println(driver.getCurrentUrl());
     }   */
 
+    @Test
+    public void testForms() throws Exception {
+        homepage.clickOnFormsLink();
+        practiceform.clickOnPracticeFormsLink();
+        practiceform.enterUserData();
+        practiceform.clickOnSubmit();
+    }
 }

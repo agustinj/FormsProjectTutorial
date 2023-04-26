@@ -1,6 +1,5 @@
 package pageObject;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -22,7 +21,7 @@ public class EnterPracticeFormDataObjects extends TestBase {
     @FindBy (id = "userEmail")
     WebElement txt_emailfield;
 
-    @FindBy (xpath = "//input[@name=\"gender\"]/parent::div")
+    @FindBy (xpath = "//div[@id='genterWrapper']//div[3]")
     List<WebElement> rdo_gender;
 
     @FindBy (id = "userNumber")
@@ -37,11 +36,14 @@ public class EnterPracticeFormDataObjects extends TestBase {
     @FindBy (id = "currentAddress")
     WebElement txt_currentaddress;
 
-    @FindBy(xpath = "//div[@class=' css-yk16xz-control']//div[@class=' css-tlfecz-indicatorContainer']//*[name()='svg']")
+    @FindBy (xpath = "//div[@class=' css-yk16xz-control']//div[@class=' css-tlfecz-indicatorContainer']//*[name()='svg']")
     WebElement dd_selectstate;
 
-    @FindBy(xpath = "//div[@id='stateCity-wrapper']//div[3]")
+    @FindBy (xpath = "//div[@id='stateCity-wrapper']//div[3]")
     WebElement dd_selectcity;
+
+    @FindBy (id = "submit")
+    WebElement submit_btn;
 
 
     //constructor that initializes all page objects
@@ -67,20 +69,18 @@ public class EnterPracticeFormDataObjects extends TestBase {
 
     //Enter form data
     public void enterUserData() throws Exception {
-        cm.selectCommonDropdownOption(dd_selectstate, "NCR");
-        cm.selectCommonDropdownOption(dd_selectcity, "Haryana");
+
         txt_firstname.sendKeys("Agustin");
         txt_lastname.sendKeys("Jauregui");
         txt_emailfield.sendKeys("mariano@hotmail.com");
         cm.selectCheckBoxes(cbox_hobbies, "Sports,music");
         txt_mobilenumber.sendKeys("0123456789");
-        date_dateofbirth.sendKeys("01/10/2010");
         txt_currentaddress.sendKeys("Amsterdam, The Netherlands");
         cm.selectCommonRadioButton(rdo_gender, "female");
     }
 
-    public void pressEnterKey() {
-        WebElement.sendKeys(Keys.ENTER);
+    public void clickOnSubmit() {
+        submit_btn.click();
     }
 
 }
